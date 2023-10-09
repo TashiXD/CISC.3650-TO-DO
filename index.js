@@ -57,6 +57,12 @@ function addTask() {
   var dueDate = document.getElementById("dueDate").value;
   var description = document.getElementById("discription").value;
 
+  // Check if any of the required fields are empty
+  if (!taskName || !dueDate || !description) {
+    alert("Please fill out all required fields");
+    return; // Exit the function if any field is empty
+  }
+
   // Create a new task element
   var newTaskElement = createTaskElement(
     taskName,
